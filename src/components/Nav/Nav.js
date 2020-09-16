@@ -15,6 +15,19 @@ export default ({ title, description }) => (
         />
         <html lang="es" />
         <meta name="description" content={description} />
+
+        <meta
+          property="og:image"
+          content={`http://${
+            typeof window !== undefined ? window.location.hostname : "seyo.mx"
+          }/locks.jpg`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`https://${
+            typeof window !== undefined ? window.location.hostname : "seyo.mx"
+          }/locks.jpg`}
+        />
       </Helmet>
     ) : null}
     <div className={classes.container}>
