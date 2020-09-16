@@ -14,7 +14,11 @@ import { addToCart } from "components/Cart/Cart"
 const KEY_NAME = "GATEWAY"
 
 export default () => (
-  <Layout productToPurchase={KEY_NAME}>
+  <Layout
+    productToPurchase={KEY_NAME}
+    title={`Seyo | Productos - ${KEY_NAME}`}
+    description="Da un paso más hacia la automatización doméstica"
+  >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
@@ -42,7 +46,7 @@ export default () => (
         />
       </div>
       <AppWifiFloor />
-      <Resources manual="gateway"/>
+      <Resources manual="gateway" />
     </div>
   </Layout>
 )

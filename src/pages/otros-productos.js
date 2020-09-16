@@ -11,7 +11,10 @@ import { getPriceString } from "utils/functions"
 import LockCard from "components/LockCard/LockCard"
 
 export default () => (
-  <Layout>
+  <Layout
+    title="Seyo | Otros Productos"
+    description="Da un paso más hacia la automatización doméstica."
+  >
     <div className={classes.container}>
       <div className={classes.locksBanner}>
         <h1>Otros Productos</h1>

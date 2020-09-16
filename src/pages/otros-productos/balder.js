@@ -20,7 +20,11 @@ import mecanismo from "images/accesories/BALDER/machinery.png"
 const KEY_NAME = "BALDER"
 
 export default () => (
-  <Layout productToPurchase={KEY_NAME}>
+  <Layout
+    productToPurchase={KEY_NAME}
+    title={`Seyo | Productos - ${KEY_NAME}`}
+    description="Da un paso más hacia la automatización doméstica"
+  >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>

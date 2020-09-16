@@ -1,4 +1,4 @@
-import { LOCK_PRICES, PRICES } from "./prices"
+import { LOCK_PRICES, PRICES, PRODUCTS } from "./prices"
 
 export function formatMoney(
   amount,
@@ -50,4 +50,16 @@ export const countCartItems = () => {
   return Object.keys(cart).reduce((acc, currKey) => {
     return acc + cart[currKey].amount
   }, 0)
+}
+
+export const getOrderFromStorage = () => {
+  if (typeof localStorage === "undefined") return
+  let cart = JSON.parse(localStorage.cart || "{}")
+  return Object.keys(cart)
+    .filter(key => !!cart[key].amount)
+    .map(objKey => ({
+      code: objKey,
+      ...PRODUCTS[objKey],
+      ...cart[objKey],
+    }))
 }

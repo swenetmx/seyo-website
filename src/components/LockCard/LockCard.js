@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState, useRef } from "react"
 import classes from "./LockCard.module.less"
 import linesLeft from "images/lines/lines_locks.png"
 import linesRight from "images/lines/lines_locks_flipped.png"
@@ -23,8 +23,27 @@ let Text = ({ title, price, lineImg, methods, direction, link, subtitle }) => (
 )
 
 export default ({ direction, title, img, price, methods, link, subtitle }) => {
+  let [scrolled, setScrolled] = useState(false)
+  const element = useRef(null)
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.addEventListener("scroll", e => {
+        let offsetDocument = element.current
+          ? element.current.getBoundingClientRect()
+          : {}
+        if (0 > offsetDocument.top - window.innerHeight + 300 && !scrolled) {
+          setScrolled(true)
+        }
+      })
+    }
+  }, [])
+
   return (
-    <div className={classes.container}>
+    <div
+      className={[classes.container, scrolled ? classes.visible : ""].join(" ")}
+      ref={element}
+    >
       {direction == "left" ? (
         <div className={classes.contentLeft}>
           <Text

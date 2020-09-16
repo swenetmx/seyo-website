@@ -13,7 +13,11 @@ import tarjeta from "images/locks/freya/tarjeta.png"
 import { addToCart } from "components/Cart/Cart"
 
 export default () => (
-  <Layout productToPurchase="TARJETAS_RF">
+  <Layout
+    productToPurchase="TARJETAS_RF"
+    title={`Seyo | Productos - TARJETAS RF`}
+    description="Da un paso más hacia la automatización doméstica"
+  >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>TARJETAS</h1>

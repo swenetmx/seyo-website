@@ -1,4 +1,4 @@
-  import React from "react"
+import React from "react"
 import "stylesheets/main.module.less"
 import classes from "stylesheets/locks.module.less"
 import Layout from "components/Layout/Layout"
@@ -21,10 +21,13 @@ import KeyFloor from "components/KeyFloor/KeyFloor"
 import PreHeader from "components/PreHeader/PreHeader"
 
 export default () => (
-  <Layout>
+  <Layout
+    title="Seyo | Cerraduras"
+    description="Abre la puerta al futuro, abre la puerta a SEYO."
+  >
     <div className={classes.container}>
       <div className={classes.locksBanner}>
-        <PreHeader type="h1"/>
+        <PreHeader type="h1" />
         <p>
           Abre la puerta al <b>futuro</b>, abre la puerta a <b>SEYO</b>.
         </p>

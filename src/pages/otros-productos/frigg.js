@@ -82,7 +82,11 @@ const caracteristics = [
 ]
 
 export default () => (
-  <Layout productToPurchase={KEY_NAME}>
+  <Layout
+    productToPurchase={KEY_NAME}
+    title={`Seyo | Productos - ${KEY_NAME}`}
+    description="Da un paso más hacia la automatización doméstica"
+  >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}20</h1>

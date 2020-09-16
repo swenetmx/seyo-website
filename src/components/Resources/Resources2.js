@@ -4,76 +4,11 @@ import app from "images/support/app.jpg"
 import manual from "images/support/manual.jpg"
 import plantillas from "images/support/plantillas.jpg"
 import Modal from "react-bootstrap/Modal"
+import { PRODUCTS } from "utils/prices"
 
-let plantillasList = [
-  {
-    title: "FREYA",
-    url: "/soporte/freya/plantilla.pdf",
-  },
-  {
-    title: "MIST",
-    url: "/soporte/mist/plantilla.pdf",
-  },
-  {
-    title: "NOT",
-    url: "/soporte/not/plantilla.pdf",
-  },
-  {
-    title: "SOL",
-    url: "/soporte/sol/plantilla.pdf",
-  },
-  {
-    title: "SYF",
-    url: "/soporte/syf/plantilla.pdf",
-  },
-  {
-    title: "SYN",
-    url: "/soporte/syn/plantilla.pdf",
-  },
-  {
-    title: "TYR",
-    url: "/soporte/tyr/plantilla.pdf",
-  },
-]
-
-let manualesList = [
-  {
-    title: "FREYA",
-    url: "/soporte/freya/manual.pdf",
-  },
-  {
-    title: "BALDER",
-    url: "/soporte/balder/manual.pdf",
-  },
-  {
-    title: "GATEWAY",
-    url: "/soporte/gateway/manual.pdf",
-  },
-  {
-    title: "MIST",
-    url: "/soporte/mist/manual.pdf",
-  },
-  {
-    title: "NOT",
-    url: "/soporte/not/manual.pdf",
-  },
-  {
-    title: "SOL",
-    url: "/soporte/sol/manual.pdf",
-  },
-  {
-    title: "SYF",
-    url: "/soporte/syf/manual.pdf",
-  },
-  {
-    title: "SYN",
-    url: "/soporte/syn/manual.pdf",
-  },
-  {
-    title: "TYR",
-    url: "/soporte/tyr/manual.pdf",
-  },
-]
+let productsArray = Object.keys(PRODUCTS).map(it => PRODUCTS[it])
+let plantillasList = productsArray.filter(it => it.template)
+let manualesList = productsArray.filter(it => it.manual)
 
 export default () => {
   const [showPlantillas, setShowPlantillas] = useState(false)
@@ -87,8 +22,8 @@ export default () => {
         <Modal.Body>
           <div className={classes.linksGrid}>
             {plantillasList.map((it, index) => (
-              <a href={it.url} target="_blank" key={index}>
-                {it.title}
+              <a href={it.template} target="_blank" key={index}>
+                {it.name}
               </a>
             ))}
           </div>
@@ -102,8 +37,8 @@ export default () => {
         <Modal.Body>
           <div className={classes.linksGrid}>
             {manualesList.map((it, index) => (
-              <a key={index} href={it.url} target="_blank">
-                {it.title}
+              <a key={index} href={it.manual} target="_blank">
+                {it.name}
               </a>
             ))}
           </div>

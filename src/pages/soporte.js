@@ -8,14 +8,13 @@ import ContactForm from "components/ContactForm/ContactForm"
 import Resources from "components/Resources/Resources2"
 
 export default () => (
-  <Layout>
+  <Layout title="Seyo | Soporte" description="">
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>SOPORTE</h1>
       <img src={banner} alt="Banner" />
       <div className={classes.text}>
-        <p>
-        </p>
+        <p></p>
       </div>
       <h5>RECURSOS</h5>
       <Resources />

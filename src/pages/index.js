@@ -13,9 +13,13 @@ import locks_all from "images/banners/locks_all_cropped.jpg"
 import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
+import { addToCart } from "components/Cart/Cart"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout
+    title="Seyo México"
+    description="Abre la puerta al futuro, abre la puerta a SEYO."
+  >
     <div className={classes.carousel}>
       <Carousel
         items={[
@@ -31,7 +35,7 @@ const IndexPage = () => (
               },
               {
                 title: "COMPRA YA",
-                url: "/",
+                onClick: () => addToCart("FREYA19"),
               },
             ]}
           />,
@@ -47,7 +51,7 @@ const IndexPage = () => (
               },
               {
                 title: "COMPRA YA",
-                url: "/",
+                onClick: () => addToCart("NOT19"),
               },
             ]}
           />,
@@ -63,7 +67,7 @@ const IndexPage = () => (
               },
               {
                 title: "COMPRA YA",
-                url: "/",
+                onClick: () => addToCart("SYN19"),
               },
             ]}
           />,

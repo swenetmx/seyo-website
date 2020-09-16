@@ -4,8 +4,7 @@ import "stylesheets/main.module.less"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
 import Table from "components/Table/Table"
-import { PRODUCTS } from "utils/prices"
-import { formatMoney } from "utils/functions"
+import { formatMoney, getOrderFromStorage } from "utils/functions"
 import plus from "images/add.svg"
 import minus from "images/substract.svg"
 import bin from "images/bin.svg"
@@ -27,24 +26,11 @@ const CLIENT_ID =
 export default () => {
   let [order, setOrder] = useState([])
   let [loading, setLoading] = useState(false)
+  let [pay, setPay] = useState(false)
 
   useEffect(() => {
-    setOrderFromStorage()
+    setOrder(getOrderFromStorage())
   }, [])
-
-  let setOrderFromStorage = () => {
-    if (typeof localStorage === "undefined") return
-    let cart = JSON.parse(localStorage.cart || "{}")
-    setOrder(
-      Object.keys(cart)
-        .filter(key => !!cart[key].amount)
-        .map(objKey => ({
-          code: objKey,
-          ...PRODUCTS[objKey],
-          ...cart[objKey],
-        }))
-    )
-  }
 
   let setNewProductAmount = (newOrder, newValue, code, index) => {
     if (newValue === 0) {
@@ -63,32 +49,23 @@ export default () => {
   }
 
   let reduceAmount = code => {
+    if (loading || pay) return
     let index = order.findIndex(it => it.code === code)
     let newOrder = order.map(it => ({ ...it }))
     let newValue = newOrder[index].amount - 1
     setNewProductAmount(newOrder, newValue, code, index)
-    EventBus.dispatch(
-      "show_toast",
-      null,
-      "Se ha removido el producto.",
-      "success"
-    )
   }
 
   let increaseAmount = code => {
+    if (loading || pay) return
     let index = order.findIndex(it => it.code === code)
     let newOrder = order.map(it => ({ ...it }))
     let newValue = newOrder[index].amount + 1
     setNewProductAmount(newOrder, newValue, code, index)
-    EventBus.dispatch(
-      "show_toast",
-      null,
-      "Se ha agregado el producto.",
-      "success"
-    )
   }
 
   let removeProduct = code => {
+    if (loading || pay) return
     let index = order.findIndex(it => it.code === code)
     let newOrder = order.map(it => ({ ...it }))
     let newValue = 0
@@ -131,24 +108,27 @@ export default () => {
     {
       title: "Cantidad",
       dataIndex: "amount",
-      render: (amount, element) => (
-        <div className={classes.actions}>
-          <img src={bin} alt="" onClick={() => removeProduct(element.code)} />
-          <div className={classes.changeAmount}>
-            <img
-              src={minus}
-              alt=""
-              onClick={() => reduceAmount(element.code)}
-            />
-            <span>{amount}</span>
-            <img
-              src={plus}
-              alt=""
-              onClick={() => increaseAmount(element.code)}
-            />
+      render: (amount, element) =>
+        pay ? (
+          amount
+        ) : (
+          <div className={classes.actions}>
+            <img src={bin} alt="" onClick={() => removeProduct(element.code)} />
+            <div className={classes.changeAmount}>
+              <img
+                src={minus}
+                alt=""
+                onClick={() => reduceAmount(element.code)}
+              />
+              <span>{amount}</span>
+              <img
+                src={plus}
+                alt=""
+                onClick={() => increaseAmount(element.code)}
+              />
+            </div>
           </div>
-        </div>
-      ),
+        ),
     },
     {
       title: "Total (MXN)",
@@ -189,7 +169,6 @@ export default () => {
   let submitPurchase = (orderID, details) => {
     if (typeof window === "undefined") return
     let stringDetails = JSON.stringify(details)
-    console.log("stringDetails", stringDetails)
     let units = details.purchase_units
     let direccion = {}
     if (units.length) {
@@ -218,7 +197,9 @@ export default () => {
           ...direccion,
         }),
       })
-        .then(() => window.location.replace("/orden-completada"))
+        .then(() => {
+          window.location.replace("/orden-completada")
+        })
         .catch(error => {
           sendErrorMessage(stringDetails)
         })
@@ -227,14 +208,11 @@ export default () => {
     }
   }
 
-  let clearCart = () => {
-    localStorage.cart = "{}"
-    setOrder([])
-    EventBus.dispatch("rerender_cart")
-  }
-
   return (
-    <Layout>
+    <Layout
+      title="Seyo | Carrito de Compras"
+      description="Tus productos están aquí."
+    >
       <form
         data-netlify="true"
         className={classes.container}
@@ -255,39 +233,36 @@ export default () => {
         <input type="hidden" name="Codigo Postal" value="" />
         <input type="hidden" name="form-name" value="orden-completada" />
         <input type="hidden" name="Cadena de detalles de PayPal" value="" />
-        {!loading ? (
-          <>
-            <PreHeader type="h2" />
-            <h1>CARRITO DE COMPRAS</h1>
-          </>
-        ) : null}
-        {!order.length ? (
-          <p className={classes.empty}>
-            <span>Tu carrito está vacio.</span>
-            <Link to="/cerraduras">Ver Cerraduras</Link>{" "}
-          </p>
-        ) : (
-          <>
-            {loading ? (
-              <div className={classes.spinner}></div>
-            ) : (
-              <>
-                <Table
-                  dataSource={order}
-                  columns={columns}
-                  rowKey="code"
-                  className={classes.largeTable}
-                />
-                <h3 className={classes.total}>
-                  <span>Total:</span>
-                  <b>{"$" + formatMoney(calculateTotal())}</b>
-                </h3>
-                <div className={classes.paypal}>
+        <>
+          <PreHeader type="h2" />
+          <h1>CARRITO DE COMPRAS</h1>
+        </>
+        <>
+          {!order.length ? (
+            <p className={classes.empty}>
+              <span>Tu carrito está vacio.</span>
+              <Link to="/cerraduras">Ver Cerraduras</Link>{" "}
+            </p>
+          ) : (
+            <>
+              <Table
+                dataSource={order}
+                columns={columns}
+                rowKey="code"
+                className={classes.largeTable}
+              />
+              <h3 className={classes.total}>
+                <span>Total:</span>
+                <b>{"$" + formatMoney(calculateTotal())}</b>
+              </h3>
+              <div className={classes.paypal}>
+                {loading ? (
+                  <div className={classes.spinner}></div>
+                ) : pay ? (
                   <PayPalButton
                     amount={0.01 /*calculateTotal()*/}
                     onSuccess={(details, data) => {
                       setLoading(true)
-                      clearCart()
                       submitPurchase(data.orderID, details)
                     }}
                     onError={error => {
@@ -305,11 +280,22 @@ export default () => {
                       false: false,
                     }}
                   />
-                </div>
-              </>
-            )}
-          </>
-        )}
+                ) : (
+                  <button
+                    className={classes.pay}
+                    type=""
+                    onClick={e => {
+                      e.preventDefault()
+                      setPay(true)
+                    }}
+                  >
+                    PAGAR AHORA
+                  </button>
+                )}
+              </div>
+            </>
+          )}
+        </>
       </form>
     </Layout>
   )

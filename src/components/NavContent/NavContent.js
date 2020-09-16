@@ -26,6 +26,9 @@ export default () => {
           <Link to="/soporte">Soporte</Link>
         </li>
         <li>
+          <Link to="/nosotros">Nosotros</Link>
+        </li>
+        <li>
           <Link to="/comunidad">Comunidad</Link>
         </li>
         <li>

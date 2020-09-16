@@ -7,7 +7,7 @@ import PreHeader from "components/PreHeader/PreHeader"
 import ContactForm from "components/ContactForm/ContactForm"
 
 export default () => (
-  <Layout>
+  <Layout title="Seyo | Comunidad" description="Suscribete a la comunidad SEYO">
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>COMUNIDAD</h1>

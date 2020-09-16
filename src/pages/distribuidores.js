@@ -24,14 +24,17 @@ const Distributor = ({ location, address, img }) => (
 )
 
 export default () => (
-  <Layout>
+  <Layout
+    title="Seyo | Distribuidores"
+    description="Únete a nuestra red de distribuidores o encuentra el más cercano a ti."
+  >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>DISTRIBUIDORES</h1>
       <div className={classes.banner}>
         <img src={banner} alt="Banner" />
-        <p>Encuentra el más cercano</p>
       </div>
+      <h2 className={classes.intro}>Encuentra el más cercano</h2>
       <div className={classes.distributors}>
         <Distributor
           location="CDMX"
