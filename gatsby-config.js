@@ -2,26 +2,26 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Seyo México`,
+    description: `Abre la puerta al futuro, abre la puerta a SEYO.`,
+    author: `@irvingdc`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cache`,
-    // `gatsby-plugin-sitemap`,
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://www.seyo.mx",
-    //     sitemap: "https://www.seyo.mx/sitemap.xml",
-    //     policy:
-    //       process.env.GATSBY_ACTIVE_ENV === "QA"
-    //         ? [{ userAgent: "*", disallow: ["/"] }]
-    //         : [{ userAgent: "*", allow: "/" }]
-    //   }
-    // },
-    // {
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.seyo.com.mx",
+        sitemap: "https://www.seyo.com.mx/sitemap.xml",
+        policy:
+          process.env.GATSBY_ACTIVE_ENV === "QA"
+            ? [{ userAgent: "*", disallow: ["/"] }]
+            : [{ userAgent: "*", allow: "/" }]
+      }
+    },
+    //{
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
     //     trackingId: "UA-XXXXXXX",
@@ -87,11 +87,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `seyo-site`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: `#008fc7`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

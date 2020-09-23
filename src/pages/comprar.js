@@ -260,7 +260,7 @@ export default () => {
                   <div className={classes.spinner}></div>
                 ) : pay ? (
                   <PayPalButton
-                    amount={0.01 /*calculateTotal()*/}
+                    amount={calculateTotal()}
                     onSuccess={(details, data) => {
                       setLoading(true)
                       submitPurchase(data.orderID, details)

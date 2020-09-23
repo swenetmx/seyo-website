@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import banner from "images/accesories/FRIGG/banner.jpg"
+import banner from "images/accesories/FRIGG20/banner.jpg"
 import LockBanner from "components/LockBanner/LockBanner"
 import { getPriceString } from "../../utils/functions"
 import Layout from "components/Layout/Layout"
@@ -10,33 +10,29 @@ import FingerPrintFloor from "components/FingerPrintFloor/FingerPrintFloor"
 import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import CodesFloor from "components/CodesFloor/CodesFloor"
 import { addToCart } from "components/Cart/Cart"
-import movimiento from "images/accesories/FRIGG/iconos/movimiento.png"
-import audio from "images/accesories/FRIGG/iconos/audio.png"
-import lente from "images/accesories/FRIGG/iconos/lente.png"
-import wifi from "images/accesories/FRIGG/iconos/wifi.png"
-import ip from "images/accesories/FRIGG/iconos/ip.png"
-import notificaciones from "images/accesories/FRIGG/iconos/notificaciones.png"
-import hd from "images/accesories/FRIGG/iconos/hd.png"
-import nube from "images/accesories/FRIGG/iconos/nube.png"
-import vision from "images/accesories/FRIGG/iconos/vision.png"
-import bateria from "images/accesories/FRIGG/iconos/bateria.png"
+import movimiento from "images/accesories/iconos/movimiento.png"
+import audio from "images/accesories/iconos/audio.png"
+import lente from "images/accesories/iconos/lente.png"
+import wifi from "images/accesories/iconos/wifi.png"
+import ip from "images/accesories/iconos/ip.png"
+import notificaciones from "images/accesories/iconos/notificaciones.png"
+import hd from "images/accesories/iconos/hd.png"
+import nube from "images/accesories/iconos/nube.png"
+import vision from "images/accesories/iconos/vision.png"
+import bateria from "images/accesories/iconos/bateria.png"
 
-import movimiento_a from "images/accesories/FRIGG/iconos/movimiento_a.png"
-import audio_a from "images/accesories/FRIGG/iconos/audio_a.png"
-import lente_a from "images/accesories/FRIGG/iconos/lente_a.png"
-import wifi_a from "images/accesories/FRIGG/iconos/wifi_a.png"
-import ip_a from "images/accesories/FRIGG/iconos/ip_a.png"
-import notificaciones_a from "images/accesories/FRIGG/iconos/notificaciones_a.png"
-import hd_a from "images/accesories/FRIGG/iconos/hd_a.png"
-import nube_a from "images/accesories/FRIGG/iconos/nube_a.png"
-import vision_a from "images/accesories/FRIGG/iconos/vision_a.png"
-import bateria_a from "images/accesories/FRIGG/iconos/bateria_a.png"
+import movimiento_a from "images/accesories/iconos/movimiento_a.png"
+import audio_a from "images/accesories/iconos/audio_a.png"
+import wifi_a from "images/accesories/iconos/wifi_a.png"
+import hd_a from "images/accesories/iconos/hd_a.png"
+import vision_a from "images/accesories/iconos/vision_a.png"
 
-import movimiento_frigg from "images/accesories/FRIGG/movimiento.png"
-import wifi_frigg from "images/accesories/FRIGG/wifi.png"
-import hd_frigg from "images/accesories/FRIGG/hd.png"
-import vision_frigg from "images/accesories/FRIGG/vision.png"
-const KEY_NAME = "FRIGG"
+import movimiento_frigg from "images/accesories/FRIGG20/movimiento.png"
+import wifi_frigg from "images/accesories/FRIGG20/wifi.png"
+import hd_frigg from "images/accesories/FRIGG20/hd.png"
+import vision_frigg from "images/accesories/FRIGG20/vision.png"
+
+const KEY_NAME = "FRIGG20"
 
 const caracteristics = [
   {
@@ -89,11 +85,11 @@ export default () => (
   >
     <div className={classes.container}>
       <PreHeader type="h2" />
-      <h1>{KEY_NAME}20</h1>
+      <h1>{KEY_NAME}</h1>
       <LockBanner
         img={banner}
         label="Cerradura Inteligente"
-        title={KEY_NAME + "20"}
+        title={KEY_NAME}
         price={getPriceString(KEY_NAME)}
         darkText
         actions={[

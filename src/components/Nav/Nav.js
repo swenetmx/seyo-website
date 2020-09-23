@@ -19,13 +19,17 @@ export default ({ title, description }) => (
         <meta
           property="og:image"
           content={`http://${
-            typeof window !== undefined ? window.location.hostname : "seyo.mx"
+            typeof window !== "undefined"
+              ? window.location.hostname
+              : "seyo.com.mx"
           }/locks.jpg`}
         />
         <meta
           property="og:image:secure_url"
           content={`https://${
-            typeof window !== undefined ? window.location.hostname : "seyo.mx"
+            typeof window !== "undefined"
+              ? window.location.hostname
+              : "seyo.com.mx"
           }/locks.jpg`}
         />
       </Helmet>

@@ -7,8 +7,10 @@ import freya19_img from "images/locks/freya/freya-flipped.png"
 import myst19_img from "images/locks/mist19/mist19.png"
 import tarjetaRF_img from "images/accesories/tarjeta.png"
 import gateway_img from "images/accesories/gateway2.png"
-import frigg_img from "images/accesories/FRIGG/frigg_small.png"
+import frigg_img from "images/accesories/FRIGG20/frigg_small.png"
 import balder_img from "images/accesories/BALDER/balder_small.png"
+import enok_img from "images/accesories/ENOK20/enok_small.png"
+import casper_img from "images/accesories/CASPER20/casper_small.png"
 
 export const LOCKS = {
   SYN19: {
@@ -85,16 +87,28 @@ export const ACCESORIES = {
   },
   BALDER: {
     price: 5270,
-    name: "Balder",
+    name: "BALDER",
     image: balder_img,
     link: "/otros-productos/balder",
     manual: "/soporte/balder/manual.pdf",
   },
-  FRIGG: {
+  FRIGG20: {
     price: 5270,
-    name: "Frigg",
+    name: "FRIGG-20",
     image: frigg_img,
-    link: "/otros-productos/frigg",
+    link: "/otros-productos/frigg20",
+  },
+  CASPER20: {
+    price: 4895,
+    name: "CASPER-20",
+    image: casper_img,
+    link: "/otros-productos/casper20",
+  },
+  ENOK20: {
+    price: 3660,
+    name: "ENOK-20",
+    image: enok_img,
+    link: "/otros-productos/enok20",
   },
 }
 
