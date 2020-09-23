@@ -5,6 +5,7 @@ module.exports = {
     title: `Seyo México`,
     description: `Abre la puerta al futuro, abre la puerta a SEYO.`,
     author: `@irvingdc`,
+    siteUrl: `https://swedishnet.com.mx`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
