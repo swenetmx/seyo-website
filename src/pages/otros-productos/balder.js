@@ -95,7 +95,7 @@ export default () => (
         hideExtraText
       />
       <KeyFloor />
-      <Resources manual="manual" />
+      <Resources manual="balder" hideApp />
     </div>
   </Layout>
 )

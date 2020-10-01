@@ -1,12 +1,12 @@
-import syn19_img from "images/locks/syn/syn.png"
-import syf19_img from "images/locks/syf/syf_flipped.png"
-import tyr19_img from "images/locks/tyr/tyr.png"
-import not19_img from "images/locks/not/not_flipped.png"
-import sol19_img from "images/locks/sol/sol.png"
-import freya19_img from "images/locks/freya/freya-flipped.png"
-import myst19_img from "images/locks/mist19/mist19.png"
-import tarjetaRF_img from "images/accesories/tarjeta.png"
-import gateway_img from "images/accesories/gateway2.png"
+import syn19_img from "images/locks/syn/syn_small.png"
+import syf19_img from "images/locks/syf/syf_small.png"
+import tyr19_img from "images/locks/tyr/tyr_small.png"
+import not19_img from "images/locks/not/not_small.png"
+import sol19_img from "images/locks/sol/sol_small.png"
+import freya19_img from "images/locks/freya/freya_small.png"
+import myst19_img from "images/locks/mist19/mist19_small.png"
+import tarjetaRF_img from "images/accesories/tarjeta_small.png"
+import gateway_img from "images/accesories/gateway_small.png"
 import frigg_img from "images/accesories/FRIGG20/frigg_small.png"
 import balder_img from "images/accesories/BALDER/balder_small.png"
 import enok_img from "images/accesories/ENOK20/enok_small.png"
@@ -71,6 +71,8 @@ export const LOCKS = {
   },
 }
 
+export const SHIPPING_COST = 200
+
 export const ACCESORIES = {
   TARJETAS_RF: {
     price: 90,
@@ -103,12 +105,14 @@ export const ACCESORIES = {
     name: "CASPER-20",
     image: casper_img,
     link: "/otros-productos/casper20",
+    manual: "/soporte/casper/manual.pdf",
   },
   ENOK20: {
     price: 3660,
     name: "ENOK-20",
     image: enok_img,
     link: "/otros-productos/enok20",
+    manual: "/soporte/enok/manual.pdf",
   },
 }
 

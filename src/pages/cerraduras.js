@@ -7,10 +7,10 @@ import LineSubtitle from "components/LineSubtitle/LineSubtitle"
 import syn from "images/locks/syn/syn.png"
 import syf from "images/locks/syf/syf_flipped.png"
 import tyr from "images/locks/tyr/tyr.png"
-import not from "images/locks/not/not_flipped.png"
+import not from "images/locks/not/not.png"
 import sol from "images/locks/sol/sol.png"
-import freya from "images/locks/freya/freya-flipped.png"
-import mist from "images/locks/mist19/mist19.png"
+import freya from "images/locks/freya/freya.png"
+import mist from "images/locks/mist19/mist19-flipped.png"
 import { getPriceString } from "utils/functions"
 import LockCard from "components/LockCard/LockCard"
 import FingerPrintFloor from "components/FingerPrintFloor/FingerPrintFloor"
@@ -78,20 +78,20 @@ export default () => (
           methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
-          link="/cerraduras/freya19"
-          direction="right"
-          img={freya}
-          title="FREYA19"
-          price={getPriceString("FREYA19")}
-          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
-        />
-        <LockCard
           link="/cerraduras/mist19"
-          direction="left"
+          direction="right"
           title="MIST19"
           img={mist}
           price={getPriceString("MIST19")}
           methods={["huella", "wifi", "app", "llave"]}
+        />
+        <LockCard
+          link="/cerraduras/freya19"
+          direction="left"
+          img={freya}
+          title="FREYA19"
+          price={getPriceString("FREYA19")}
+          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
       </div>
       <LineSubtitle className={classes.valquiriaText}>

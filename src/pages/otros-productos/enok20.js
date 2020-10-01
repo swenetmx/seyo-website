@@ -24,6 +24,7 @@ import ip_a from "images/accesories/iconos/ip_a.png"
 import wifi_a from "images/accesories/iconos/wifi_a.png"
 import hd_a from "images/accesories/iconos/hd_a.png"
 import vision_a from "images/accesories/iconos/vision_a.png"
+import Resources from "components/Resources/Resources"
 
 import movimiento_ENOK from "images/accesories/ENOK20/movimiento.png"
 import wifi_ENOK from "images/accesories/ENOK20/wifi.png"
@@ -170,6 +171,7 @@ export default () => (
         }
         hideExtraText
       />
+      <Resources manual="enok" hideApp />
     </div>
   </Layout>
 )

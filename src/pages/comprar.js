@@ -10,6 +10,7 @@ import minus from "images/substract.svg"
 import bin from "images/bin.svg"
 import { Link } from "gatsby"
 import { PayPalButton } from "react-paypal-button-v2"
+import { SHIPPING_COST } from "utils/prices"
 
 var EventBus = require("eventbusjs")
 
@@ -79,7 +80,8 @@ export default () => {
   }
 
   let calculateTotal = () =>
-    order.reduce((acc, { price, amount }) => acc + price * amount, 0)
+    order.reduce((acc, { price, amount }) => acc + price * amount, 0) +
+    SHIPPING_COST
 
   let columns = [
     {
@@ -254,6 +256,10 @@ export default () => {
               <h3 className={classes.total}>
                 <span>Total:</span>
                 <b>{"$" + formatMoney(calculateTotal())}</b>
+                <label>
+                  Incluye {"$" + formatMoney(SHIPPING_COST)} por costos de
+                  envío.
+                </label>
               </h3>
               <div className={classes.paypal}>
                 {loading ? (

@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import facebook from "images/facebook.svg"
 import instagram from "images/instagram.svg"
+import wa from "images/wa.svg"
 import { Link } from "gatsby"
 import styles from "./Footer.module.less"
 
@@ -37,6 +38,13 @@ export default class extends Component {
                 alt="Instagram Logo"
                 title="Instagram Logo"
               />
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=+5212223245630&text=Estoy%20interesado%20en%20sus%20productos."
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img src={wa} alt="WhatsApp Logo" title="WhatsApp Logo" />
             </a>
           </div>
         </div>

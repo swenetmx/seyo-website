@@ -23,7 +23,8 @@ export default () => {
           <div className={classes.linksGrid}>
             {plantillasList.map((it, index) => (
               <a href={it.template} target="_blank" key={index}>
-                {it.name}
+                <img alt={it.name} src={it.image} />
+                <span>{it.name}</span>
               </a>
             ))}
           </div>
@@ -38,7 +39,8 @@ export default () => {
           <div className={classes.linksGrid}>
             {manualesList.map((it, index) => (
               <a key={index} href={it.manual} target="_blank">
-                {it.name}
+                <img alt={it.name} src={it.image} />
+                <span>{it.name}</span>
               </a>
             ))}
           </div>

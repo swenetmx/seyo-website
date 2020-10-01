@@ -30,6 +30,7 @@ import solar_CASPER from "images/accesories/CASPER20/solar.png"
 import wifi_CASPER from "images/accesories/CASPER20/wifi.png"
 import hd_CASPER from "images/accesories/CASPER20/hd.png"
 import vision_CASPER from "images/accesories/CASPER20/vision.png"
+import Resources from "components/Resources/Resources"
 
 const KEY_NAME = "CASPER20"
 
@@ -174,6 +175,7 @@ export default () => (
         }
         hideExtraText
       />
+      <Resources manual="casper" hideApp />
     </div>
   </Layout>
 )

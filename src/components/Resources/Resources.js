@@ -4,7 +4,7 @@ import app from "images/support/app.jpg"
 import manualImg from "images/support/manual.jpg"
 import plantillasImg from "images/support/plantillas.jpg"
 
-export default ({ manual, plantilla }) => (
+export default ({ manual, plantilla, hideApp }) => (
   <div className={classes.container}>
     <h4>
       Recursos para <b>instalación</b>
@@ -28,13 +28,15 @@ export default ({ manual, plantilla }) => (
           <img src={plantillasImg} alt="app" />
         </a>
       ) : null}
-      <a
-        rel="noopener noreferrer"
-        href="/soporte/app/manual.pdf"
-        target="_blank"
-      >
-        <img src={app} alt="app" />
-      </a>
+      {hideApp ? null : (
+        <a
+          rel="noopener noreferrer"
+          href="/soporte/app/manual.pdf"
+          target="_blank"
+        >
+          <img src={app} alt="app" />
+        </a>
+      )}
     </div>
   </div>
 )
