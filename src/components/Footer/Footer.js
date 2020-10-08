@@ -40,7 +40,7 @@ export default class extends Component {
               />
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=+5212223245630&text=Estoy%20interesado%20en%20sus%20productos."
+              href="https://api.whatsapp.com/send?phone=+5212215985710&text=Estoy%20interesado%20en%20sus%20productos."
               rel="noopener noreferrer"
               target="_blank"
             >

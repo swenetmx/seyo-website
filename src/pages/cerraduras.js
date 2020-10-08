@@ -11,6 +11,7 @@ import not from "images/locks/not/not.png"
 import sol from "images/locks/sol/sol.png"
 import freya from "images/locks/freya/freya.png"
 import mist from "images/locks/mist19/mist19-flipped.png"
+import mist20 from "images/locks/mist20/mist20.png"
 import { getPriceString } from "utils/functions"
 import LockCard from "components/LockCard/LockCard"
 import FingerPrintFloor from "components/FingerPrintFloor/FingerPrintFloor"
@@ -92,6 +93,14 @@ export default () => (
           title="FREYA19"
           price={getPriceString("FREYA19")}
           methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
+        />
+        <LockCard
+          link="/cerraduras/mist20"
+          direction="right"
+          title="MIST20"
+          img={mist20}
+          price={getPriceString("MIST20")}
+          methods={["huella", "wifi", "app", "llave"]}
         />
       </div>
       <LineSubtitle className={classes.valquiriaText}>

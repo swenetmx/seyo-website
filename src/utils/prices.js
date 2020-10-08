@@ -5,6 +5,7 @@ import not19_img from "images/locks/not/not_small.png"
 import sol19_img from "images/locks/sol/sol_small.png"
 import freya19_img from "images/locks/freya/freya_small.png"
 import myst19_img from "images/locks/mist19/mist19_small.png"
+import myst20_img from "images/locks/mist20/mist20_small.png"
 import tarjetaRF_img from "images/accesories/tarjeta_small.png"
 import gateway_img from "images/accesories/gateway_small.png"
 import frigg_img from "images/accesories/FRIGG20/frigg_small.png"
@@ -69,9 +70,17 @@ export const LOCKS = {
     template: "/soporte/mist/plantilla.pdf",
     manual: "/soporte/mist/manual.pdf",
   },
+  MIST20: {
+    price: 4110,
+    name: "MIST-20",
+    image: myst20_img,
+    link: "/cerraduras/mist20",
+    template: "/soporte/mist20/plantilla.pdf",
+    manual: "/soporte/mist20/manual.pdf",
+  },
 }
 
-export const SHIPPING_COST = 200
+export const SHIPPING_COST = 180
 
 export const ACCESORIES = {
   TARJETAS_RF: {
@@ -95,7 +104,7 @@ export const ACCESORIES = {
     manual: "/soporte/balder/manual.pdf",
   },
   FRIGG20: {
-    price: 5270,
+    price: 2495,
     name: "FRIGG-20",
     image: frigg_img,
     link: "/otros-productos/frigg20",
@@ -116,7 +125,7 @@ export const ACCESORIES = {
   },
 }
 
-const flattenPrice = obj => {
+export const flattenPrice = obj => {
   return Object.keys(obj).reduce(
     (acc, currKey) => ({
       ...acc,

@@ -31,7 +31,7 @@ export default ({
             inteligente y recibe <b>notificaciones</b> en tiempo real de su uso
             en
             <b>cualquier parte del mundo.</b> <br />
-            (Solo con <Link to="/otros/gateway/">Gateway*</Link>)
+            (Solo con <Link to="/otros-productos/gateway/">Gateway*</Link>)
           </p>
         )}
       </div>
