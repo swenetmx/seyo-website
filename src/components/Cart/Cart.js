@@ -13,6 +13,10 @@ let Cart = () => {
   let timeout = 0
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addTestProduct = () => addToCart("TEST_PRODUCT")
+    }
+
     EventBus.addEventListener("rerender_cart", () => {
       setCartCount(countCartItems())
     })

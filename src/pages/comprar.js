@@ -80,8 +80,7 @@ export default () => {
   }
 
   let calculateTotal = () =>
-    order.reduce((acc, { price, amount }) => acc + price * amount, 0) +
-    SHIPPING_COST
+    order.reduce((acc, { price, amount }) => acc + price * amount, 0)
 
   let columns = [
     {
@@ -256,10 +255,7 @@ export default () => {
               <h3 className={classes.total}>
                 <span>Total:</span>
                 <b>{"$" + formatMoney(calculateTotal())}</b>
-                <label>
-                  Incluye {"$" + formatMoney(SHIPPING_COST)} por costos de
-                  envío.
-                </label>
+                <label>¡Envío gratis!</label>
               </h3>
               <div className={classes.paypal}>
                 {loading ? (

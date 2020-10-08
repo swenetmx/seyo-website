@@ -39,7 +39,7 @@ export const LOCKS = {
     template: "/soporte/tyr/plantilla.pdf",
   },
   NOT19: {
-    price: 6980,
+    price: 7360,
     name: "NOT-19",
     image: not19_img,
     link: "/cerraduras/not19",
@@ -47,7 +47,7 @@ export const LOCKS = {
     template: "/soporte/not/plantilla.pdf",
   },
   SOL19: {
-    price: 5900,
+    price: 6490,
     name: "SOL-19",
     image: sol19_img,
     link: "/cerraduras/sol19",
@@ -55,7 +55,7 @@ export const LOCKS = {
     template: "/soporte/sol/plantilla.pdf",
   },
   FREYA19: {
-    price: 5270,
+    price: 5840,
     name: "FREYA-19",
     image: freya19_img,
     link: "/cerraduras/freya19",
@@ -63,7 +63,7 @@ export const LOCKS = {
     manual: "/soporte/freya/manual.pdf",
   },
   MIST19: {
-    price: 3580,
+    price: 3900,
     name: "MIST-19",
     image: myst19_img,
     link: "/cerraduras/mist19",
@@ -71,7 +71,7 @@ export const LOCKS = {
     manual: "/soporte/mist/manual.pdf",
   },
   MIST20: {
-    price: 4110,
+    price: 4510,
     name: "MIST-20",
     image: myst20_img,
     link: "/cerraduras/mist20",
@@ -97,7 +97,7 @@ export const ACCESORIES = {
     manual: "/soporte/gateway/manual.pdf",
   },
   BALDER: {
-    price: 5270,
+    price: 5970,
     name: "BALDER",
     image: balder_img,
     link: "/otros-productos/balder",
@@ -122,6 +122,11 @@ export const ACCESORIES = {
     image: enok_img,
     link: "/otros-productos/enok20",
     manual: "/soporte/enok/manual.pdf",
+  },
+  TEST_PRODUCT: {
+    price: 0.01,
+    name: "TEST_PRODUCT",
+    image: gateway_img,
   },
 }
 
