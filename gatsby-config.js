@@ -5,7 +5,7 @@ module.exports = {
     title: `Seyo México`,
     description: `Abre la puerta al futuro, abre la puerta a SEYO.`,
     author: `@irvingdc`,
-    siteUrl: `https://swedishnet.com.mx`,
+    siteUrl: `https://www.seyo.com.mx`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,14 +22,13 @@ module.exports = {
             : [{ userAgent: "*", allow: "/" }]
       }
     },
-    //{
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-XXXXXXX",
-    //     optimizeId: "GTM-XXXXXXX",
-    //     head: false
-    //   }
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-180909810-1",
+        head: false
+      }
+    },
     // {
     //   resolve: `gatsby-source-wordpress`,
     //   options: {
