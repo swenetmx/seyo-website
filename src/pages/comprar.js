@@ -213,6 +213,7 @@ export default () => {
     <Layout
       title="Seyo | Carrito de Compras"
       description="Tus productos están aquí."
+      canonical="/comprar/"
     >
       <form
         data-netlify="true"

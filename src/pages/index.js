@@ -19,6 +19,7 @@ const IndexPage = () => (
   <Layout
     title="Seyo México"
     description="Abre la puerta al futuro, abre la puerta a SEYO."
+    canonical="/"
   >
     <div className={classes.carousel}>
       <Carousel

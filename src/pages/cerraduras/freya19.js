@@ -28,6 +28,7 @@ export default () => (
     productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Abre la puerta al futuro, abre la puerta a SEYO."
+    canonical="/cerraduras/freya19/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />

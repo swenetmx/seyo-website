@@ -25,6 +25,7 @@ export default () => (
   <Layout
     title="Seyo | Cerraduras"
     description="Abre la puerta al futuro, abre la puerta a SEYO."
+    canonical="/cerraduras/"
   >
     <div className={classes.container}>
       <div className={classes.locksBanner}>

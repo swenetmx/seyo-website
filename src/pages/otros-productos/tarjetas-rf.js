@@ -17,6 +17,7 @@ export default () => (
     productToPurchase="TARJETAS_RF"
     title={`Seyo | Productos - TARJETAS RF`}
     description="Da un paso más hacia la automatización doméstica"
+    canonical="/otros-productos/tarjetas-rf/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />

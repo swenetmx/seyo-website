@@ -11,6 +11,7 @@ export default () => (
   <Layout
     title="Seyo | Nosotros"
     description="Comprometidos con desarrollar la mejor tecnología de seguridad y proveer la mayor tranquilidad a nuestros clientes bajo el respaldo de ingeniería sueca en cada uno de nuestros productos."
+    canonical="/nosotros/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />

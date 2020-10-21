@@ -3,16 +3,13 @@ import { Helmet } from "react-helmet"
 import classes from "./Nav.module.less"
 import NavContent from "../NavContent/NavContent"
 
-export default ({ title, description }) => (
+export default ({ title, description, canonical }) => (
   <Fragment>
     {title ? (
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        <link
-          rel="canonical"
-          href={typeof window !== "undefined" ? window.location.href : ""}
-        />
+        <link rel="canonical" href={`https://www.seyo.com.mx${canonical}`} />
         <html lang="es" />
         <meta name="description" content={description} />
 

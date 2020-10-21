@@ -5,7 +5,11 @@ import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
 
 export default () => (
-  <Layout title="Seyo | Aviso de Privacidad" description="">
+  <Layout
+    title="Seyo | Aviso de Privacidad"
+    description=""
+    canonical="/privacidad/"
+  >
     <div className={classes.container}>
       <h1>AVISO DE PRIVACIDAD</h1>
       <div className={classes.text}>

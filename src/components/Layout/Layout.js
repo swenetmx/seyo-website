@@ -4,10 +4,16 @@ import Nav from "components/Nav/Nav"
 import PurchaseFooter from "components/PurchaseFooter/PurchaseFooter"
 import Footer from "components/Footer/Footer"
 
-export default ({ children, productToPurchase, title, description }) => (
+export default ({
+  children,
+  productToPurchase,
+  title,
+  description,
+  canonical,
+}) => (
   <>
     <div className={classes.container}>
-      <Nav title={title} description={description} />
+      <Nav title={title} description={description} canonical={canonical} />
       {productToPurchase ? (
         <PurchaseFooter productToPurchase={productToPurchase} />
       ) : null}

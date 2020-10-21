@@ -16,6 +16,7 @@ export default () => (
   <Layout
     title="Seyo | Otros Productos"
     description="Da un paso más hacia la automatización doméstica."
+    canonical="/otros-productos/"
   >
     <div className={classes.container}>
       <div className={classes.locksBanner}>

@@ -37,6 +37,7 @@ export default () => (
   <Layout
     title="Seyo | Distribuidores"
     description="Únete a nuestra red de distribuidores o encuentra el más cercano a ti."
+    canonical="/distribuidores/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />

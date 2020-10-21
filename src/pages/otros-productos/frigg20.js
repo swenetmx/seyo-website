@@ -82,6 +82,7 @@ export default () => (
     productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Da un paso más hacia la automatización doméstica"
+    canonical="/otros-productos/frigg20/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />
