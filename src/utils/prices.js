@@ -90,7 +90,7 @@ export const ACCESORIES = {
     link: "otros-productos/tarjetas-rf",
   },
   GATEWAY: {
-    price: 5270,
+    price: 1330,
     name: "Gateway",
     image: gateway_img,
     link: "/otros-productos/gateway",
