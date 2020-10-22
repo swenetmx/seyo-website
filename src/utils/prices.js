@@ -108,6 +108,7 @@ export const ACCESORIES = {
     name: "FRIGG-20",
     image: frigg_img,
     link: "/otros-productos/frigg20",
+    manual: "/soporte/frigg20/manual.pdf",
   },
   CASPER20: {
     price: 4895,
