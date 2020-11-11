@@ -82,23 +82,40 @@
       width: fit-content;
     }
   }
-  .total {
+  .totalGreen,
+  .total,
+  .totalLarge {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aliceblue;
-    border: 1px solid #018fc7;
+    background-color: #f2fff0;
+    border: 1px solid #22a502;
     padding: 8px;
     border-radius: 4px;
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     position: relative;
-    label{
+    b {
+      color: #22a502 !important;
+    }
+    label {
       position: absolute;
       right: 0px;
       bottom: -33px;
       font-size: 1rem;
       font-weight: 500;
     }
+  }
+  .total,
+  .totalLarge {
+    background-color: aliceblue;
+    border: 1px solid #018fc7;
+    font-size: 1.8rem;
+    b {
+      color: #018fc7 !important;
+    }
+  }
+  .total {
+    font-size: 1.2rem !important;
   }
   .paypal {
     text-align: center;

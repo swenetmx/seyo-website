@@ -21,6 +21,8 @@ const CLIENT = {
     "AYXOqRUfWU1KrAknRKBYJxhboFTgLrhhaSg-0ExoPcE7grLqlEaEDAqetDzaf0ury9Ht8U8bsTuIU3ie",
 }
 
+const DISCOUNT = 0.15
+
 const CLIENT_ID =
   process.env.GATSBY_ENV === "PRODUCTION" ? CLIENT.production : CLIENT.sandbox
 
@@ -253,9 +255,24 @@ export default () => {
                 rowKey="code"
                 className={classes.largeTable}
               />
-              <h3 className={classes.total}>
+              {DISCOUNT ? (
+                <>
+                  <h3 className={classes.total}>
+                    <span>Subtotal:</span>
+                    <b>{"$" + formatMoney(calculateTotal())}</b>
+                  </h3>
+                  <h3 className={classes.total}>
+                    <span>
+                      Descuento por el <b>Buen Fin</b>:
+                    </span>
+                    <b>- {"$" + formatMoney(calculateTotal() * DISCOUNT)}</b>
+                  </h3>
+                </>
+              ) : null}
+
+              <h3 className={DISCOUNT ? classes.totalGreen : classes.totalLarge}>
                 <span>Total:</span>
-                <b>{"$" + formatMoney(calculateTotal())}</b>
+                <b>{"$" + formatMoney(calculateTotal() * (1 - DISCOUNT))}</b>
                 <label>¡Envío gratis!</label>
               </h3>
               <div className={classes.paypal}>
@@ -263,7 +280,7 @@ export default () => {
                   <div className={classes.spinner}></div>
                 ) : pay ? (
                   <PayPalButton
-                    amount={calculateTotal()}
+                    amount={calculateTotal() * (1 - DISCOUNT)}
                     onSuccess={(details, data) => {
                       setLoading(true)
                       submitPurchase(data.orderID, details)
