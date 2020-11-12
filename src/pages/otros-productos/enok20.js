@@ -172,7 +172,7 @@ export default () => (
         }
         hideExtraText
       />
-      <Resources manual="enok" hideApp />
+      <Resources manual="enok" specs="enok" hideApp />
     </div>
   </Layout>
 )

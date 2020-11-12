@@ -176,7 +176,7 @@ export default () => (
         }
         hideExtraText
       />
-      <Resources manual="casper" hideApp />
+      <Resources manual="casper"  specs="casper" hideApp />
     </div>
   </Layout>
 )

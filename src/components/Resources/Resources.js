@@ -3,8 +3,9 @@ import classes from "./Resources.module.less"
 import app from "images/support/app.jpg"
 import manualImg from "images/support/manual.jpg"
 import plantillasImg from "images/support/plantillas.jpg"
+import specsImg from "images/support/specs.jpeg"
 
-export default ({ manual, plantilla, hideApp }) => (
+export default ({ manual, specs, plantilla, hideApp }) => (
   <div className={classes.container}>
     <h4>
       Recursos para <b>instalación</b>
@@ -26,6 +27,15 @@ export default ({ manual, plantilla, hideApp }) => (
           target="_blank"
         >
           <img src={plantillasImg} alt="app" />
+        </a>
+      ) : null}
+      {specs ? (
+        <a
+          rel="noopener noreferrer"
+          href={`/soporte/${specs}/specs.pdf`}
+          target="_blank"
+        >
+          <img src={specsImg} alt="app" />
         </a>
       ) : null}
       {hideApp ? null : (

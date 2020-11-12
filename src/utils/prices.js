@@ -116,6 +116,7 @@ export const ACCESORIES = {
     image: casper_img,
     link: "/otros-productos/casper20",
     manual: "/soporte/casper/manual.pdf",
+    specs: "/soporte/casper/specs.pdf",
   },
   ENOK20: {
     price: 3660,
@@ -123,6 +124,7 @@ export const ACCESORIES = {
     image: enok_img,
     link: "/otros-productos/enok20",
     manual: "/soporte/enok/manual.pdf",
+    specs: "/soporte/enok/specs.pdf",
   },
   TEST_PRODUCT: {
     price: 0.01,
