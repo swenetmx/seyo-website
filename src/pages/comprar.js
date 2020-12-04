@@ -21,7 +21,7 @@ const CLIENT = {
     "AYXOqRUfWU1KrAknRKBYJxhboFTgLrhhaSg-0ExoPcE7grLqlEaEDAqetDzaf0ury9Ht8U8bsTuIU3ie",
 }
 
-const DISCOUNT = 0.15
+const DISCOUNT = 0
 
 const CLIENT_ID =
   process.env.GATSBY_ENV === "PRODUCTION" ? CLIENT.production : CLIENT.sandbox
