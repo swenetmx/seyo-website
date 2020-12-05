@@ -8,6 +8,7 @@ import smart from "images/distributors/smart.png"
 import factoria from "images/distributors/factoria.png"
 import herrajes from "images/distributors/herrajes.jpg"
 import cancun from "images/distributors/cancun.jpg"
+import dysmx from "images/distributors/dysmx.png"
 import wit from "images/distributors/wit.png"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
@@ -192,6 +193,24 @@ export default () => (
             </p>
           }
           img={otzun}
+        />
+        <Distributor
+          location="CDMX"
+          name="DYSMX Domótica y Seguridad"
+          website="https://www.dysmx.com"
+          content={
+            <p>
+              <b>Contacto:</b>  Mauricio Paulin <br />
+              <b> Dirección: </b> Rio Misisipi 49, int 1401 Cuauhtémoc,
+              Cuauhtémoc CDMX 06500
+              <br />
+              <b>Teléfono:</b> 5576424003 <br />
+              <b> Horario de Atención:</b> Lunes a Viernes  9:00 am a 19:00 pm y
+              Sábado de 9:00 am a 2:00 pm
+              <br />
+            </p>
+          }
+          img={dysmx}
         />
       </div>
       <h2 className={classes.intro}>
