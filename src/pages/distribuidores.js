@@ -83,6 +83,24 @@ export default () => (
           img={otzun}
         />
         <Distributor
+          location="CDMX"
+          name="DYSMX Domótica y Seguridad"
+          website="https://www.dysmx.com"
+          content={
+            <p>
+              <b>Contacto:</b>  Mauricio Paulin <br />
+              <b> Dirección: </b> Rio Misisipi 49, int 1401 Cuauhtémoc,
+              Cuauhtémoc CDMX 06500
+              <br />
+              <b>Teléfono:</b> 5576424003 <br />
+              <b> Horario de Atención:</b> Lunes a Viernes  9:00 am a 19:00 pm y
+              Sábado de 9:00 am a 2:00 pm
+              <br />
+            </p>
+          }
+          img={dysmx}
+        />
+        <Distributor
           location="EDO. MEX."
           name="Remottika"
           website="https://www.remottika.com"
@@ -136,12 +154,12 @@ export default () => (
           website="https://www.seguridadyredescancun.com"
           content={
             <p>
-              <b>Persona de contacto: </b>Sandra Hernández Zamorano  <br />
+              <b>Persona de contacto: </b>Arturo Villagrán <br />
               <b>
                 Correo de contacto:
-              </b> sch.zamorano@seguridadyredescancun.com <br />
-              <b>Horario de atención:</b> lunes a viernes 9 a 6:00 pm <br />
-              <b>Teléfono de contacto:</b> 554557 7818 <br />
+              </b> avillagran@seguridadyredescancun.com <br />
+              <b>Horario de atención:</b> Lunes a Viernes 9:00 a 18:00<br />
+              <b>Teléfono de contacto:</b> 9982433591 <br />
             </p>
           }
           img={cancun}
@@ -193,24 +211,6 @@ export default () => (
             </p>
           }
           img={otzun}
-        />
-        <Distributor
-          location="CDMX"
-          name="DYSMX Domótica y Seguridad"
-          website="https://www.dysmx.com"
-          content={
-            <p>
-              <b>Contacto:</b>  Mauricio Paulin <br />
-              <b> Dirección: </b> Rio Misisipi 49, int 1401 Cuauhtémoc,
-              Cuauhtémoc CDMX 06500
-              <br />
-              <b>Teléfono:</b> 5576424003 <br />
-              <b> Horario de Atención:</b> Lunes a Viernes  9:00 am a 19:00 pm y
-              Sábado de 9:00 am a 2:00 pm
-              <br />
-            </p>
-          }
-          img={dysmx}
         />
       </div>
       <h2 className={classes.intro}>
