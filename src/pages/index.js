@@ -14,6 +14,8 @@ import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 import { addToCart } from "components/Cart/Cart"
+import buenfin from "images/banners/christmas.jpg"
+import Modal from "react-bootstrap/Modal"
 
 export const useLocalStorage = (key, defaultValue) => {
   const stored =
@@ -31,7 +33,7 @@ export const useLocalStorage = (key, defaultValue) => {
 }
 
 const IndexPage = () => {
-
+  let [hidden, setHidden] = useLocalStorage("modal.christmas.hidden", false)
   return (
     <Layout
       title="Seyo México"
@@ -39,6 +41,15 @@ const IndexPage = () => {
       canonical="/"
     >
       <div className={classes.carousel}>
+        <Modal
+          show={!hidden}
+          onHide={() => setHidden(true)}
+          dialogClassName={classes.modalClass}
+        >
+          <Modal.Body>
+            <img src={buenfin} alt="buen fin" onClick={() => setHidden(true)} />
+          </Modal.Body>
+        </Modal>
         <Carousel
           items={[
             <LockBanner
