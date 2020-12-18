@@ -33,7 +33,7 @@ export const useLocalStorage = (key, defaultValue) => {
 }
 
 const IndexPage = () => {
-  let [hidden, setHidden] = useLocalStorage("modal.christmas.hidden", false)
+  let [hidden, setHidden] = useState(false)
   return (
     <Layout
       title="Seyo México"
