@@ -41,7 +41,7 @@ const IndexPage = () => {
       canonical="/"
     >
       <div className={classes.carousel}>
-        <Modal
+        {/*<Modal
           show={!hidden}
           onHide={() => setHidden(true)}
           dialogClassName={classes.modalClass}
@@ -49,7 +49,7 @@ const IndexPage = () => {
           <Modal.Body>
             <img src={buenfin} alt="buen fin" onClick={() => setHidden(true)} />
           </Modal.Body>
-        </Modal>
+        </Modal>*/}
         <Carousel
           items={[
             <LockBanner

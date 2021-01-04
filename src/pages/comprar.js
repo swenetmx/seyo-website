@@ -21,7 +21,7 @@ const CLIENT = {
     "AYXOqRUfWU1KrAknRKBYJxhboFTgLrhhaSg-0ExoPcE7grLqlEaEDAqetDzaf0ury9Ht8U8bsTuIU3ie",
 }
 
-const DISCOUNT = 0.15
+const DISCOUNT = 0
 
 const CLIENT_ID =
   process.env.GATSBY_ENV === "PRODUCTION" ? CLIENT.production : CLIENT.sandbox
@@ -263,7 +263,8 @@ export default () => {
                   </h3>
                   <h3 className={classes.total}>
                     <span>
-                      Descuento por <b>temporada</b>:
+                      Descuento por <b>temporada
+                      </b>:
                     </span>
                     <b>- {"$" + formatMoney(calculateTotal() * DISCOUNT)}</b>
                   </h3>
