@@ -127,7 +127,7 @@ export const ACCESORIES = {
     specs: "/soporte/enok/specs.pdf",
   },
   TEST_PRODUCT: {
-    price: 0.01,
+    price: 1,
     name: "TEST_PRODUCT",
     image: gateway_img,
   },

@@ -3,6 +3,7 @@ import classes from "stylesheets/cart.module.less"
 import "stylesheets/main.module.less"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
+import DiscountBox from "components/DiscountBox/DiscountBox"
 import Table from "components/Table/Table"
 import { formatMoney, getOrderFromStorage } from "utils/functions"
 import plus from "images/add.svg"
@@ -21,8 +22,6 @@ const CLIENT = {
     "AYXOqRUfWU1KrAknRKBYJxhboFTgLrhhaSg-0ExoPcE7grLqlEaEDAqetDzaf0ury9Ht8U8bsTuIU3ie",
 }
 
-const DISCOUNT = 0
-
 const CLIENT_ID =
   process.env.GATSBY_ENV === "PRODUCTION" ? CLIENT.production : CLIENT.sandbox
 
@@ -30,6 +29,8 @@ export default () => {
   let [order, setOrder] = useState([])
   let [loading, setLoading] = useState(false)
   let [pay, setPay] = useState(false)
+  let [discount, setDiscount] = useState(0)
+  let [discountCode, setDiscountCode] = useState("")
 
   useEffect(() => {
     setOrder(getOrderFromStorage())
@@ -79,6 +80,11 @@ export default () => {
       "Se ha removido el producto.",
       "success"
     )
+  }
+
+  let handleDiscount = item => {
+    setDiscount(item.discount)
+    setDiscountCode(item.code)
   }
 
   let calculateTotal = () =>
@@ -196,6 +202,8 @@ export default () => {
           "form-name": "orden-completada",
           Productos: stringifyProducts(),
           "ID de la orden": orderID,
+          "Codigo De Descuento": discountCode || "ninguno",
+          "Descuento Aplicado": `${discount * 100}%`,
           Email: details.payer.email_address,
           ...direccion,
         }),
@@ -237,6 +245,8 @@ export default () => {
         <input type="hidden" name="Codigo Postal" value="" />
         <input type="hidden" name="form-name" value="orden-completada" />
         <input type="hidden" name="Cadena de detalles de PayPal" value="" />
+        <input type="hidden" name="Codigo De Descuento" value="" />
+        <input type="hidden" name="Descuento Aplicado" value="" />
         <>
           <PreHeader type="h2" />
           <h1>CARRITO DE COMPRAS</h1>
@@ -249,13 +259,14 @@ export default () => {
             </p>
           ) : (
             <>
+              {!discount ? <DiscountBox onDiscount={handleDiscount} /> : null}
               <Table
                 dataSource={order}
                 columns={columns}
                 rowKey="code"
                 className={classes.largeTable}
               />
-              {DISCOUNT ? (
+              {discount ? (
                 <>
                   <h3 className={classes.total}>
                     <span>Subtotal:</span>
@@ -263,17 +274,18 @@ export default () => {
                   </h3>
                   <h3 className={classes.total}>
                     <span>
-                      Descuento por <b>temporada
-                      </b>:
+                      Descuento especial <b>({100 * discount}%)</b>:
                     </span>
-                    <b>- {"$" + formatMoney(calculateTotal() * DISCOUNT)}</b>
+                    <b>- {"$" + formatMoney(calculateTotal() * discount)}</b>
                   </h3>
                 </>
               ) : null}
 
-              <h3 className={DISCOUNT ? classes.totalGreen : classes.totalLarge}>
+              <h3
+                className={discount ? classes.totalGreen : classes.totalLarge}
+              >
                 <span>Total:</span>
-                <b>{"$" + formatMoney(calculateTotal() * (1 - DISCOUNT))}</b>
+                <b>{"$" + formatMoney(calculateTotal() * (1 - discount))}</b>
                 <label>¡Envío gratis!</label>
               </h3>
               <div className={classes.paypal}>
@@ -281,7 +293,7 @@ export default () => {
                   <div className={classes.spinner}></div>
                 ) : pay ? (
                   <PayPalButton
-                    amount={calculateTotal() * (1 - DISCOUNT)}
+                    amount={calculateTotal() * (1 - discount)}
                     onSuccess={(details, data) => {
                       setLoading(true)
                       submitPurchase(data.orderID, details)
