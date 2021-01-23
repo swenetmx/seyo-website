@@ -5,6 +5,8 @@ import not19_img from "images/locks/not/not_small.png"
 import sol19_img from "images/locks/sol/sol_small.png"
 import freya19_img from "images/locks/freya/freya_small.png"
 import myst19_img from "images/locks/mist19/mist19_small.png"
+import ull20_img from "images/locks/ull20/ull20_small.png"
+import vali20_img from "images/locks/vali20/vali20_small.png"
 import myst20_img from "images/locks/mist20/mist20_small.png"
 import tarjetaRF_img from "images/accesories/tarjeta_small.png"
 import gateway_img from "images/accesories/gateway_small.png"
@@ -77,6 +79,18 @@ export const LOCKS = {
     link: "/cerraduras/mist20",
     template: "/soporte/mist20/plantilla.pdf",
     manual: "/soporte/mist20/manual.pdf",
+  },
+  VALI20: {
+    price: 5830,
+    name: "VALI-20",
+    image: vali20_img,
+    link: "/cerraduras/vali20",
+  },
+  ULL20: {
+    price: 3750,
+    name: "ULL-20",
+    image: ull20_img,
+    link: "/cerraduras/ull20",
   },
 }
 
