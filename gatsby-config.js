@@ -19,24 +19,13 @@ module.exports = {
         policy:
           process.env.GATSBY_ACTIVE_ENV === "QA"
             ? [{ userAgent: "*", disallow: ["/"] }]
-            : [{ userAgent: "*", allow: "/" }]
-      }
+            : [{ userAgent: "*", allow: "/" }],
+      },
     },
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: "gatsby-plugin-google-gtag",
       options: {
-        id: "G-K4GT9YCZFH",
-  
-        // Include GTM in development.
-        //
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: true,
-  
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        //
-        // Defaults to null
-        defaultDataLayer: { platform: "gatsby" },
+        trackingIds: ["G-K4GT9YCZFH"],
       },
     },
     // {
