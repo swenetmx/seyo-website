@@ -9,24 +9,20 @@ export default ({ title, description, canonical }) => (
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        <link rel="canonical" href={`https://seyo.com.mx${canonical}`} />
+        <link rel="canonical" href={`https://seyo.mx${canonical}`} />
         <html lang="es" />
         <meta name="description" content={description} />
 
         <meta
           property="og:image"
           content={`http://${
-            typeof window !== "undefined"
-              ? window.location.hostname
-              : "seyo.com.mx"
+            typeof window !== "undefined" ? window.location.hostname : "seyo.mx"
           }/locks.jpg`}
         />
         <meta
           property="og:image:secure_url"
           content={`https://${
-            typeof window !== "undefined"
-              ? window.location.hostname
-              : "seyo.com.mx"
+            typeof window !== "undefined" ? window.location.hostname : "seyo.mx"
           }/locks.jpg`}
         />
       </Helmet>

@@ -5,7 +5,7 @@ module.exports = {
     title: `Seyo México`,
     description: `Abre la puerta al futuro, abre la puerta a SEYO.`,
     author: `@irvingdc`,
-    siteUrl: `https://seyo.com.mx`,
+    siteUrl: `https://seyo.mx`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://seyo.com.mx",
-        sitemap: "https://seyo.com.mx/sitemap.xml",
+        host: "https://seyo.mx",
+        sitemap: "https://seyo.mx/sitemap.xml",
         policy:
           process.env.GATSBY_ACTIVE_ENV === "QA"
             ? [{ userAgent: "*", disallow: ["/"] }]
