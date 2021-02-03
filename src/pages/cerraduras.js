@@ -79,7 +79,7 @@ export default () => (
           title="SOL19"
           img={sol}
           price={getPriceString("SOL19")}
-          methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
+          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
           link="/cerraduras/mist19"
