@@ -9,7 +9,7 @@ export default ({ title, description, canonical }) => (
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        <link rel="canonical" href={`https://www.seyo.com.mx${canonical}`} />
+        <link rel="canonical" href={`https://seyo.com.mx${canonical}`} />
         <html lang="es" />
         <meta name="description" content={description} />
 
