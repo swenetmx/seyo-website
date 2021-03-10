@@ -89,7 +89,7 @@ export default () => (
       <h1>{KEY_NAME}</h1>
       <LockBanner
         img={banner}
-        label="Cerradura Inteligente"
+        label="Videoportero"
         title={KEY_NAME}
         price={getPriceString(KEY_NAME)}
         darkText
