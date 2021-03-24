@@ -69,7 +69,7 @@ export const addToCart = code => {
 }
 
 export default () => (
-  <ToastProvider>
+  <ToastProvider placement="top-left">
     <Cart />
   </ToastProvider>
 )

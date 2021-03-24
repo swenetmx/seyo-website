@@ -1,6 +1,10 @@
 export default {
-  "19298393404dee8a047e3dc1fae3bbe2a719d136": {
-    discount: 0.25,
-    expiration: "2021-03-01",
+  "6c91c99f18cd12241dc3e95c4ddee29d260a44bd": {
+    discount: 0.15,
+    expiration: "2021-05-05",
+  },
+  "e3dae3873812e9728b078498c4cafa23a8577bba": {
+    discount: 0.15,
+    expiration: "2021-05-05",
   },
 }

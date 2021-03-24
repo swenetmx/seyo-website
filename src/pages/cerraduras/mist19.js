@@ -16,12 +16,12 @@ import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
 import { addToCart } from "components/Cart/Cart"
+var EventBus = require("eventbusjs")
 
 const KEY_NAME = "MIST19"
 
 export default () => (
   <Layout
-    productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Abre la puerta al futuro, abre la puerta a SEYO."
     canonical="/cerraduras/mist19/"
@@ -37,8 +37,14 @@ export default () => (
         darkText
         actions={[
           {
-            title: "COMPRAR",
-            onClick: () => addToCart(KEY_NAME),
+            title: "AGOTADO",
+            onClick: () =>
+              EventBus.dispatch(
+                "show_toast",
+                null,
+                "Lo sentimos, el producto no se encuentra en existencia",
+                "warning"
+              ),
           },
         ]}
       />
