@@ -93,11 +93,11 @@ export default () => {
               <input type="number" name="Telefono" id="Telefono" />
             </div>
             <div>
-              <label htmlFor="Producto de interés">Producto de interés:</label>
+              <label htmlFor="Producto de interes">Producto de interés:</label>
               <input
                 type="text"
-                name="Producto de interés"
-                id="Producto de interés"
+                name="Producto de interes"
+                id="Producto de interes"
               />
             </div>
             <div className={classes.button}>
