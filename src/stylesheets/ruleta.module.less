@@ -1,0 +1,49 @@
+.container {
+  h1 {
+    padding: 60px 10px 60px;
+  }
+  h1 {
+    color: #008fc7 !important;
+    font-size: 3.2rem;
+    font-weight: 600 !important;
+    text-align: center;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    button {
+      margin-bottom: 50px;
+      font-size: 20px;
+      height: 40px;
+      width: 220px;
+    }
+    .prize {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      background-color: #fafafaf4;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 200;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.2s;
+      * {
+        color: #008fc7 !important;
+        font-weight: 600 !important;
+      }
+    }
+    .prizeDisplayed {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -14,8 +14,7 @@ import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 import { addToCart } from "components/Cart/Cart"
-import buenfin from "images/banners/christmas.jpg"
-import Modal from "react-bootstrap/Modal"
+import HabitatModals from "components/HabitatModals/HabitatModals"
 
 export const useLocalStorage = (key, defaultValue) => {
   const stored =
@@ -40,6 +39,7 @@ const IndexPage = () => {
       description="Abre la puerta al futuro, abre la puerta a SEYO."
       canonical="/"
     >
+      <HabitatModals />
       <div className={classes.carousel}>
         {/*<Modal
           show={!hidden}
