@@ -49,7 +49,7 @@ export default () => {
             data-netlify="true"
             method="POST"
             name="habitat-clientes"
-            action="/gana-con-seyo/"
+            action="/ruleta/"
           >
             <input type="hidden" name="form-name" value="habitat-clientes" />
             <div>
@@ -108,9 +108,13 @@ export default () => {
             data-netlify="true"
             method="POST"
             name="habitat-proyectos-y-distribuidores"
-            action="/gana-con-seyo/"
+            action="/ruleta/"
           >
-            <input type="hidden" name="form-name" value="habitat-proyectos-y-distribuidores" />
+            <input
+              type="hidden"
+              name="form-name"
+              value="habitat-proyectos-y-distribuidores"
+            />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
               <input type="text" name="Nombre" id="Nombre" required />
