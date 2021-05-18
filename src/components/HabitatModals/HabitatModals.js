@@ -47,11 +47,11 @@ export default () => {
           <form
             className={classes.container}
             data-netlify="true"
+            name="habitat_clientes"
+            action="/ruleta"
             method="POST"
-            name="habitat-clientes"
-            action="/ruleta/"
           >
-            <input type="hidden" name="form-name" value="habitat-clientes" />
+            <input type="hidden" name="form-name" value="habitat_clientes" />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
               <input type="text" name="Nombre" id="Nombre" required />
@@ -106,14 +106,14 @@ export default () => {
           <form
             className={classes.container}
             data-netlify="true"
+            name="habitat_proyectos_y_distribuidores"
+            action="/ruleta"
             method="POST"
-            name="habitat-proyectos-y-distribuidores"
-            action="/ruleta/"
           >
             <input
               type="hidden"
               name="form-name"
-              value="habitat-proyectos-y-distribuidores"
+              value="habitat_proyectos_y_distribuidores"
             />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
