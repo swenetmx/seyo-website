@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, lazy } from "react"
 import classes from "stylesheets/ruleta.module.less"
 import "stylesheets/main.module.less"
 import Layout from "components/Layout/Layout"
 import { navigate } from "gatsby-link"
-import { Wheel } from "react-custom-roulette"
+import Suspense from "components/Suspense/Suspense"
+
+const AsyncWheel = lazy(() => import("components/AsyncWheel/AsyncWheel"))
 
 const prizes = [
   "¡FELICIDADES! Has ganado un 15% de descuento con el codigo SEGURIDAD15 Valido desde hoy al 30 de Mayo.",
@@ -58,6 +60,8 @@ export default () => {
     { option: "Di no al COVID: KN95" },
   ]
 
+  const isSSR = typeof window === "undefined"
+
   return (
     <Layout
       title="Seyo | ¡Participa y gana con Seyo!"
@@ -75,25 +79,27 @@ export default () => {
             ¡Girar Ahora!
           </button>
           <div className={classes.roulette}>
-            <Wheel
-              mustStartSpinning={mustSpin}
-              prizeNumber={prizeNumber}
-              data={data}
-              backgroundColors={["#dbf0f9", "whitesmoke"]}
-              onStopSpinning={() => {
-                setMustSpin(false)
-                setShowPrize(true)
-              }}
-              outerBorderWidth={10}
-              outerBorderColor="#008fc7"
-              innerBorderColor="#008fc7"
-              innerRadius={5}
-              innerBorderWidth={5}
-              radiusLineWidth={0}
-              fontSize={16}
-              textDistance={50}
-              textColors={["#008fc7"]}
-            />
+            <Suspense>
+              <AsyncWheel
+                mustStartSpinning={mustSpin}
+                prizeNumber={prizeNumber}
+                data={data}
+                backgroundColors={["#dbf0f9", "whitesmoke"]}
+                onStopSpinning={() => {
+                  setMustSpin(false)
+                  setShowPrize(true)
+                }}
+                outerBorderWidth={10}
+                outerBorderColor="#008fc7"
+                innerBorderColor="#008fc7"
+                innerRadius={5}
+                innerBorderWidth={5}
+                radiusLineWidth={0}
+                fontSize={16}
+                textDistance={50}
+                textColors={["#008fc7"]}
+              />
+            </Suspense>
           </div>
           <div
             className={[

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Irving Diaz <irvingedc@gmail.com>",
   "dependencies": {
+    "@loadable/component": "^5.15.0",
     "bootstrap": "^4.5.0",
     "eventbusjs": "^0.2.0",
     "gatsby": "^2.21.37",
