@@ -1,35 +1,10 @@
-import React, { useEffect, useState } from "react"
-import classes from "./HabitatModals.module.less"
-import Modal from "react-bootstrap/Modal"
+import React, { useEffect, useState, lazy } from "react"
+import classes from "stylesheets/modals.module.less"
+import "stylesheets/main.module.less"
+import Layout from "components/Layout/Layout"
 import { navigate } from "gatsby-link"
 
 export default () => {
-  const [showRegularModal, setShowRegularModal] = useState(false)
-  const [showLargeModal, setShowLargeModal] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => {
-      readUrl()
-    }, 1000)
-  }, [])
-
-  let readUrl = () => {
-    if (typeof window === "undefined") {
-      return
-    }
-    if (!!window.localStorage.prize) {
-      return
-    }
-    console.log("reading qr")
-    const urlObject = new URL(window.location.href)
-    let value = urlObject.searchParams.get("forma")
-    if (value === "clientes") {
-      setShowRegularModal(true)
-    } else if (value === "proyectos-y-distribuidores") {
-      setShowLargeModal(true)
-    }
-  }
-
   let storeEmail = e => {
     if (typeof window === "undefined") {
       return
@@ -54,64 +29,14 @@ export default () => {
   }
 
   return (
-    <div className={classes.container}>
-      <Modal show={showRegularModal} onHide={() => setShowRegularModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>¡Participa y gana con Seyo!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Llena tus datos y prueba tu Suerte 🍀 </p>
-          <form
-            className={classes.container}
-            data-netlify="true"
-            name="habitat_clientes"
-            action="/"
-            method="POST"
-            onSubmit={handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="habitat_clientes" />
-            <div>
-              <label htmlFor="Nombre">Nombre:</label>
-              <input type="text" name="Nombre" id="Nombre" required />
-            </div>
-            <div>
-              <label htmlFor="Apellido">Apellido:</label>
-              <input type="text" name="Apellido" id="Apellido" required />
-            </div>
-            <div>
-              <label htmlFor="Correo">Correo Electrónico:</label>
-              <input
-                type="email"
-                name="Correo"
-                id="Correo"
-                required
-                onChange={storeEmail}
-              />
-            </div>
-            <div>
-              <label htmlFor="Telefono">Teléfono de contacto:</label>
-              <input type="number" name="Telefono" id="Telefono" />
-            </div>
-            <div>
-              <label htmlFor="Producto de interes">Producto de interés:</label>
-              <input
-                type="text"
-                name="Producto de interes"
-                id="Producto de interes"
-              />
-            </div>
-            <div className={classes.button}>
-              <button className="small-button-blue-pill">ENVIAR</button>
-            </div>
-          </form>
-        </Modal.Body>
-      </Modal>
-
-      <Modal show={showLargeModal} onHide={() => setShowLargeModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>¡Bienvenido a Seyo! </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+    <Layout
+      title="Seyo | ¡Bienvenido a Seyo!"
+      description=""
+      canonical="/habitat/distribuidores/"
+    >
+      <div className={classes.container}>
+        <h1>¡Bienvenido a Seyo!</h1>
+        <div className={classes.content}>
           <p>
             Seguridad, facilidad, tranquilidad y calidad, eso que buscas Seyo lo
             pondrá en el hogar de tu cliente final.
@@ -124,7 +49,7 @@ export default () => {
           <form
             className={classes.container}
             data-netlify="true"
-            name="habitat_proyectos_y_distribuidores"
+            name="habitat-distribuidores"
             action="/"
             method="POST"
             onSubmit={handleSubmit}
@@ -132,7 +57,7 @@ export default () => {
             <input
               type="hidden"
               name="form-name"
-              value="habitat_proyectos_y_distribuidores"
+              value="habitat-distribuidores"
             />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
@@ -181,8 +106,8 @@ export default () => {
               <button className="small-button-blue-pill">ENVIAR</button>
             </div>
           </form>
-        </Modal.Body>
-      </Modal>
-    </div>
+        </div>
+      </div>
+    </Layout>
   )
 }
