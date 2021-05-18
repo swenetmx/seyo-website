@@ -51,7 +51,7 @@ export default () => {
             name="habitat-clientes"
             action="/gana-con-seyo/"
           >
-            <input type="hidden" name="form-name" value="contacto" />
+            <input type="hidden" name="form-name" value="habitat-clientes" />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
               <input type="text" name="Nombre" id="Nombre" required />
@@ -110,7 +110,7 @@ export default () => {
             name="habitat-proyectos-y-distribuidores"
             action="/gana-con-seyo/"
           >
-            <input type="hidden" name="form-name" value="contacto" />
+            <input type="hidden" name="form-name" value="habitat-proyectos-y-distribuidores" />
             <div>
               <label htmlFor="Nombre">Nombre:</label>
               <input type="text" name="Nombre" id="Nombre" required />
