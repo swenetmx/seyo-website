@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import classes from "./HabitatModals.module.less"
 import Modal from "react-bootstrap/Modal"
+import { navigate } from "gatsby-link"
 
 export default () => {
   const [showRegularModal, setShowRegularModal] = useState(false)
@@ -36,6 +37,22 @@ export default () => {
     window.localStorage.habitatEmail = e.target.value
   }
 
+  const handleSubmit = event => {
+    event.preventDefault()
+    let formData = new FormData(event.target)
+    formData.append("form-name", event.target.getAttribute("name"))
+    let body = new URLSearchParams(formData).toString()
+    console.log("formData", formData)
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+    })
+      .then(() => navigate("/ruleta/"))
+      .catch(error => alert(error))
+  }
+
   return (
     <div className={classes.container}>
       <Modal show={showRegularModal} onHide={() => setShowRegularModal(false)}>
@@ -48,8 +65,9 @@ export default () => {
             className={classes.container}
             data-netlify="true"
             name="habitat_clientes"
-            action="/ruleta"
+            action="/"
             method="POST"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="habitat_clientes" />
             <div>
@@ -107,8 +125,9 @@ export default () => {
             className={classes.container}
             data-netlify="true"
             name="habitat_proyectos_y_distribuidores"
-            action="/ruleta"
+            action="/"
             method="POST"
+            onSubmit={handleSubmit}
           >
             <input
               type="hidden"
