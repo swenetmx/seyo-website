@@ -32,7 +32,7 @@ export default () => {
       return
     }
     if (!window.localStorage.habitatEmail) {
-      navigate("/")
+      setTimeout(() => navigate("/"), 500)
     } else if (window.localStorage.prizeNumber) {
       setPrizeNumber(parseInt(window.localStorage.prizeNumber))
       setShowPrize(true)
