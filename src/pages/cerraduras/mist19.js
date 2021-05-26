@@ -15,7 +15,6 @@ import FingerPrintFloor from "components/FingerPrintFloor/FingerPrintFloor"
 import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
-import { addToCart } from "components/Cart/Cart"
 var EventBus = require("eventbusjs")
 
 const KEY_NAME = "MIST19"

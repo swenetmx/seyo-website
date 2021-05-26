@@ -19,7 +19,7 @@ import CodesFloor from "components/CodesFloor/CodesFloor"
 import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
-import { addToCart } from "components/Cart/Cart"
+var EventBus = require("eventbusjs")
 
 const KEY_NAME = "FREYA19"
 
@@ -41,8 +41,14 @@ export default () => (
         darkText
         actions={[
           {
-            title: "COMPRAR",
-            onClick: () => addToCart(KEY_NAME),
+            title: "AGOTADO",
+            onClick: () =>
+              EventBus.dispatch(
+                "show_toast",
+                null,
+                "Lo sentimos, el producto no se encuentra en existencia",
+                "warning"
+              ),
           },
         ]}
       />

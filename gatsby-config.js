@@ -28,23 +28,6 @@ module.exports = {
         trackingIds: ["G-K4GT9YCZFH"],
       },
     },
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: {
-    //     baseUrl: `seyo.site`,
-    //     protocol: `http`,
-    //     hostingWPCOM: false,
-    //     useACF: true,
-    //     concurrentRequests: 10,
-    //     includedRoutes: [
-    //       "**/*/*/categories",
-    //       "**/*/*/posts",
-    //       "**/*/*/pages",
-    //       "**/*/*/media",
-
-    //     ]
-    //   }
-    // },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
