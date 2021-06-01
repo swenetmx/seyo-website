@@ -1,7 +1,6 @@
 import syn19_img from "images/locks/syn/syn_small.png"
 import syf19_img from "images/locks/syf/syf_small.png"
 import tyr19_img from "images/locks/tyr/tyr_small.png"
-import not19_img from "images/locks/not/not_small.png"
 import sol19_img from "images/locks/sol/sol_small.png"
 import freya19_img from "images/locks/freya/freya_small.png"
 import myst19_img from "images/locks/mist19/mist19_small.png"
@@ -39,14 +38,6 @@ export const LOCKS = {
     link: "/cerraduras/tyr19",
     manual: "/soporte/tyr/manual.pdf",
     template: "/soporte/tyr/plantilla.pdf",
-  },
-  NOT19: {
-    price: 7360,
-    name: "NOT-19",
-    image: not19_img,
-    link: "/cerraduras/not19",
-    manual: "/soporte/not/manual.pdf",
-    template: "/soporte/not/plantilla.pdf",
   },
   SOL19: {
     price: 6490,

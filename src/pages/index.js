@@ -10,12 +10,10 @@ import img2 from "images/banners/not_home.jpg"
 import img3 from "images/banners/syn_home.jpg"
 import otros_productos from "images/banners/otros_productos.png"
 import locks_all from "images/banners/locks_all_cropped.jpg"
-import buenfin from "images/banners/hotsale.jpg"
 import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 import { addToCart } from "components/Cart/Cart"
-import Modal from "react-bootstrap/Modal"
 
 export const useLocalStorage = (key, defaultValue) => {
   const stored =
@@ -32,7 +30,6 @@ export const useLocalStorage = (key, defaultValue) => {
 }
 
 const IndexPage = () => {
-  let [hidden, setHidden] = useState(false)
   return (
     <Layout
       title="Seyo México"
@@ -40,15 +37,6 @@ const IndexPage = () => {
       canonical="/"
     >
       <div className={classes.carousel}>
-        <Modal
-          show={!hidden}
-          onHide={() => setHidden(true)}
-          dialogClassName={classes.modalClass}
-        >
-          <Modal.Body>
-            <img src={buenfin} alt="HotSale" onClick={() => setHidden(true)} />
-          </Modal.Body>
-        </Modal>
         <Carousel
           items={[
             <LockBanner

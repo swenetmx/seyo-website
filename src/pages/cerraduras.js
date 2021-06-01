@@ -66,22 +66,6 @@ export default () => (
           methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
-          link="/cerraduras/not19"
-          direction="right"
-          title="NOT19"
-          img={not}
-          price={getPriceString("NOT19")}
-          methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
-        />
-        <LockCard
-          link="/cerraduras/sol19"
-          direction="left"
-          title="SOL19"
-          img={sol}
-          price={getPriceString("SOL19")}
-          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
-        />
-        <LockCard
           link="/cerraduras/mist19"
           direction="right"
           title="MIST19"
@@ -90,11 +74,11 @@ export default () => (
           methods={["huella", "wifi", "app", "llave"]}
         />
         <LockCard
-          link="/cerraduras/freya19"
+          link="/cerraduras/sol19"
           direction="left"
-          img={freya}
-          title="FREYA19"
-          price={getPriceString("FREYA19")}
+          title="SOL19"
+          img={sol}
+          price={getPriceString("SOL19")}
           methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
@@ -106,12 +90,12 @@ export default () => (
           methods={["huella", "wifi", "app", "llave"]}
         />
         <LockCard
-          link="/cerraduras/vali20"
+          link="/cerraduras/freya19"
           direction="left"
-          title="VALI20"
-          img={vali20}
-          price={getPriceString("VALI20")}
-          methods={["huella", "wifi", "app", "codigo", "tarjeta"]}
+          img={freya}
+          title="FREYA19"
+          price={getPriceString("FREYA19")}
+          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
           link="/cerraduras/ull20"
@@ -120,6 +104,14 @@ export default () => (
           img={ull20}
           price={getPriceString("ULL20")}
           methods={["app", "codigo", "llave"]}
+        />
+        <LockCard
+          link="/cerraduras/vali20"
+          direction="left"
+          title="VALI20"
+          img={vali20}
+          price={getPriceString("VALI20")}
+          methods={["huella", "wifi", "app", "codigo", "tarjeta"]}
         />
       </div>
       <LineSubtitle className={classes.valquiriaText}>
