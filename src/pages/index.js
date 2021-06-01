@@ -56,22 +56,6 @@ const IndexPage = () => {
               ]}
             />,
             <LockBanner
-              img={img2}
-              label="Cerradura Inteligente"
-              title="NOT19"
-              price={getPriceString("NOT19")}
-              actions={[
-                {
-                  title: "CONOCE MÁS",
-                  url: "/cerraduras/not19",
-                },
-                {
-                  title: "COMPRA YA",
-                  onClick: () => addToCart("NOT19"),
-                },
-              ]}
-            />,
-            <LockBanner
               img={img3}
               label="Cerradura Inteligente"
               title="SYN19"
