@@ -2,7 +2,6 @@ import React from "react"
 import classes from "./HomeLocks.module.less"
 import syf from "images/locks/syf/syf_flipped.png"
 import tyr from "images/locks/tyr/tyr.png"
-import not from "images/locks/not/not_flipped.png"
 import LockCard from "components/LockCard/LockCard"
 import LineSubtitle from "components/LineSubtitle/LineSubtitle"
 import { getPriceString } from "utils/functions"
@@ -23,13 +22,6 @@ export default () => (
       title="TYR19"
       img={tyr}
       price={getPriceString("TYR19")}
-    />
-    <LockCard
-      direction="right"
-      link="/cerraduras/not19"
-      title="NOT19"
-      img={not}
-      price={getPriceString("NOT19")}
     />
   </div>
 )
