@@ -73,8 +73,6 @@ class PaypalButton extends React.Component {
   render() {
     const { loading } = this.state
 
-    console.log("total", this.props.total)
-
     return (
       <div className="main">
         {loading ? (

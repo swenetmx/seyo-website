@@ -12,7 +12,6 @@ export default ({ onDiscount }) => {
     e.preventDefault()
     let hashedCode = hash.sha1(code)
     let codeFound = CODES[hashedCode]
-    console.log("codigo", code, hashedCode, codeFound)
     if (codeFound && moment().isBefore(moment(codeFound.expiration))) {
       onDiscount({
         code,
