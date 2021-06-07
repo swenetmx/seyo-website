@@ -10,6 +10,7 @@ import herrajes from "images/distributors/herrajes.jpg"
 import cancun from "images/distributors/cancun.jpg"
 import dysmx from "images/distributors/dysmx.png"
 import wit from "images/distributors/wit.png"
+import turrme from "images/distributors/turrme.png"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
 import ContactForm from "components/ContactForm/ContactForm"
@@ -158,7 +159,8 @@ export default () => (
               <b>
                 Correo de contacto:
               </b> avillagran@seguridadyredescancun.com <br />
-              <b>Horario de atención:</b> Lunes a Viernes 9:00 a 18:00<br />
+              <b>Horario de atención:</b> Lunes a Viernes 9:00 a 18:00
+              <br />
               <b>Teléfono de contacto:</b> 9982433591 <br />
             </p>
           }
@@ -211,6 +213,23 @@ export default () => (
             </p>
           }
           img={otzun}
+        />
+        <Distributor
+          location="COAHUILA"
+          name="TURRME"
+          website="https://www.turrme.com/"
+          content={
+            <p>
+              <b>Contacto:</b> Miguel Ángel Torres Gámez <br />
+              <b>Dirección: </b>Nazario Ortiz Garza 296 colonia los pinos
+              cuarto sector, Saltillo, Coahuila.
+              <br />
+              <b>Teléfono:</b> 6142472162 <br />
+              <b>Horario de Atención:</b> Lunes a Viernes de 9:00am a 17:00 pm
+              <br />
+            </p>
+          }
+          img={turrme}
         />
       </div>
       <h2 className={classes.intro}>
