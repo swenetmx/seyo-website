@@ -224,7 +224,7 @@ export default () => (
               <b>Dirección: </b>Nazario Ortiz Garza 296 colonia los pinos
               cuarto sector, Saltillo, Coahuila.
               <br />
-              <b>Teléfono:</b> 6142472162 <br />
+              <b>Teléfono:</b> 8443815937 <br />
               <b>Horario de Atención:</b> Lunes a Viernes de 9:00am a 17:00 pm
               <br />
             </p>
