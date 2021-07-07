@@ -11,6 +11,7 @@ import cancun from "images/distributors/cancun.jpg"
 import dysmx from "images/distributors/dysmx.png"
 import wit from "images/distributors/wit.png"
 import turrme from "images/distributors/turrme.png"
+import cymisa from "images/distributors/cymisa.png"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
 import ContactForm from "components/ContactForm/ContactForm"
@@ -221,8 +222,8 @@ export default () => (
           content={
             <p>
               <b>Contacto:</b> Miguel Ángel Torres Gámez <br />
-              <b>Dirección: </b>Nazario Ortiz Garza 296 colonia los pinos
-              cuarto sector, Saltillo, Coahuila.
+              <b>Dirección: </b>Nazario Ortiz Garza 296 colonia los pinos cuarto
+              sector, Saltillo, Coahuila.
               <br />
               <b>Teléfono:</b> 8443815937 <br />
               <b>Horario de Atención:</b> Lunes a Viernes de 9:00am a 17:00 pm
@@ -230,6 +231,22 @@ export default () => (
             </p>
           }
           img={turrme}
+        />
+        <Distributor
+          location="EDO. DE MÉXICO"
+          name="CYMISA (Chapas y Maderas Importadas S.A. de C.V.)"
+          website="https://www.cymisa.com.mx/"
+          content={
+            <p>
+              <b>Dirección: </b> Av. Independencia 1323 Ote. C.P.50070. Toluca,
+              México.
+              <br />
+              <b>Teléfono:</b> 7222155168 <br />
+              <b>Horario de Atención: </b> Lunes a Viernes de 8:30 a 18:00 hrs.
+              <br />
+            </p>
+          }
+          img={cymisa}
         />
       </div>
       <h2 className={classes.intro}>
